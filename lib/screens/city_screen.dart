@@ -12,16 +12,17 @@ class _CityScreenState extends State<CityScreen> {
   String? cityName;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/city_background.jpg"),
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/city_background.jpg"),
+          fit: BoxFit.cover,
         ),
-        constraints: BoxConstraints.expand(),
-        child: SafeArea(
+      ),
+      constraints: BoxConstraints.expand(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SafeArea(
           child: Column(
             children: <Widget>[
               Align(
