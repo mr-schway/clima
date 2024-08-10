@@ -1,5 +1,7 @@
 import 'package:clima/services/networking.dart';
 import 'package:clima/services/location.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:lottie/lottie.dart';
 
 const apiKey = '6ac1fc5026679b1519abf67ede6f410f';
 const openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -29,23 +31,23 @@ class WeatherModel {
     return weatherData;
   }
 
-  String getWeatherIcon(int condition) {
+  Widget getWeatherIcon(int condition) {
     if (condition < 300) {
-      return '🌩';
+      return Lottie.asset('animations/thunderCloudy.json');
     } else if (condition < 400) {
-      return '🌧';
+      return Lottie.asset('animations/rainingSlow.json');
     } else if (condition < 600) {
-      return '☔️';
+      return Lottie.asset('animations/rainingFast.json');
     } else if (condition < 700) {
-      return '☃️';
+      return Lottie.asset('animations/snowing.json');
     } else if (condition < 800) {
-      return '🌫';
+      return Lottie.asset('animations/windy.json');
     } else if (condition == 800) {
-      return '☀️';
+      return Lottie.asset('animations/sunny.json');
     } else if (condition <= 804) {
-      return '☁️';
+      return Lottie.asset('animations/cloudy.json');
     } else {
-      return '🤷‍';
+      return Lottie.asset('animations/exclamationMark.json');
     }
   }
 
